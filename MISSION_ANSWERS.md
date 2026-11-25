@@ -518,7 +518,7 @@ Chi tiết đáng chú ý từ cùng lần chạy: image **297 MB**; `docker sto
 
 **Phần tôi tự làm / tự kiểm tra thêm**
 
-- Tự chụp 3 ảnh minh chứng triển khai trên Railway: `screenshots/dashboard.png` thể hiện Agent và Redis đang Online; `screenshots/running.png` thể hiện deployment ở trạng thái ACTIVE và Deployment successful; tự chạy 4 lệnh curl và chụp `screenshots/test.png`, thu được các mã HTTP tương ứng 200/200/401/200, không để lộ API Key. AI chỉ hỗ trợ cắt bỏ 3 dòng output của lần chạy lỗi trước đó do chưa nạp API Key vào môi trường.
+- Tự chụp 3 ảnh minh chứng triển khai trên Railway: `screenshots/dashboard.png` thể hiện Agent và Redis đang Online; `screenshots/running.png` thể hiện deployment ở trạng thái ACTIVE và Deployment successful; tự chạy 4 lệnh curl và chụp `screenshots/test.png`, thu được các mã HTTP tương ứng 200/200/401/200, không để lộ API Key. Bản `test.png` hiện tại là ảnh chụp nguyên cửa sổ VS Code, **không cắt/chỉnh sửa**, chỉ có một lần chạy duy nhất. (Bản trước đó đã được AI cắt bỏ 3 dòng output của một lần chạy lỗi do chưa nạp API Key; mình đã chụp lại ảnh mới để thay.)
 
 - Đọc lại và tìm hiểu source code trong `06-lab-complete/app/`, tập trung vào luồng xử lý request, cách xác thực API Key, quản lý cấu hình bằng biến môi trường, kết nối Redis, Rate Limiting, Cost Guard và cơ chế Graceful Shutdown. Hiểu được vai trò của từng module và sự phối hợp giữa các module trong quá trình xử lý yêu cầu của người dùng.
 
