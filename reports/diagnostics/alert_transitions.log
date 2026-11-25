@@ -1,0 +1,34 @@
+08:20:46Z LLMCostBurnRateHigh: inactive -> firing
+08:20:59Z EXPERIMENT A applied: MOCK_ERROR_RATE=0.2
+08:21:00Z A: agents recreated
+08:21:04Z AgentInstanceDown@172.18.0.9:8000: inactive -> pending
+08:21:08Z AgentInstanceDown@172.18.0.9:8000: pending -> inactive
+08:21:24Z AgentHighErrorRate: inactive -> pending
+08:22:24Z AgentHighErrorRate: pending -> firing
+08:22:35Z EXPERIMENT D: docker pause agent-2 (172.18.0.8)
+08:22:48Z AgentInstanceDown@172.18.0.8:8000: inactive -> pending
+08:23:18Z AgentInstanceDown@172.18.0.8:8000: pending -> firing
+screenshot at 08:23:34Z
+08:23:55Z RECOVERY: unpause agent-2, MOCK_ERROR_RATE back to 0.01; EXPERIMENT E applied: AGENT_VERSION=v1
+08:23:58Z AgentInstanceDown@172.18.0.9:8000: inactive -> pending
+08:23:58Z AgentInstanceDown@172.18.0.8:8000: firing -> inactive
+08:24:02Z AgentInstanceDown@172.18.0.9:8000: pending -> inactive
+08:24:02Z AgentInstanceDown@172.18.0.8:8000: inactive -> pending
+08:24:08Z AgentInstanceDown@172.18.0.8:8000: pending -> inactive
+08:24:42Z AgentHighErrorRate: firing -> inactive
+08:24:52Z LLMCostBurnRateHigh: firing -> inactive
+08:27:10Z EXPERIMENT C applied: LLM_MODEL=mock-llm-large (AGENT_VERSION=v2)
+08:27:13Z AgentInstanceDown@172.18.0.9:8000: inactive -> pending
+08:27:17Z AgentInstanceDown@172.18.0.9:8000: pending -> inactive
+08:27:17Z AgentInstanceDown@172.18.0.8:8000: inactive -> pending
+08:27:17Z AgentInstanceDown@172.18.0.7:8000: inactive -> pending
+08:27:23Z AgentInstanceDown@172.18.0.8:8000: pending -> inactive
+08:27:23Z AgentInstanceDown@172.18.0.7:8000: pending -> inactive
+08:27:33Z LLMCostBurnRateHigh: inactive -> pending
+08:29:34Z LLMCostBurnRateHigh: pending -> firing
+08:29:51Z EXPERIMENT B applied: MOCK_SLOW_RATE=0.3 (LLM_MODEL back to small)
+08:29:58Z AgentInstanceDown@172.18.0.8:8000: inactive -> pending
+08:30:04Z AgentInstanceDown@172.18.0.8:8000: pending -> inactive
+08:30:14Z AgentHighLatencyP95: inactive -> pending
+08:32:12Z AgentHighLatencyP95: pending -> firing
+08:32:30Z RECOVERY: .env removed (defaults)

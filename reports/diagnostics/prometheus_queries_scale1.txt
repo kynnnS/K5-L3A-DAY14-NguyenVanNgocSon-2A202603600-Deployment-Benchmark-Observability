@@ -1,0 +1,18 @@
+query time 2026-11-25T08:17:07Z (scale_1 run, 1 instance)
+p95 /ask (s):
+     0.29271
+avg /ask (s):
+     0.2288
+req/s by instance:
+    {'instance': '172.18.0.7:8000'} 62.07498
+error rate:
+     0.01465
+tokens/s by type:
+    {'type': 'input'} 4797.10171
+    {'type': 'output'} 2529.65562
+LLM p95 (s):
+     0.19761
+in-flight:
+     11.0
+agents up:
+    {'__name__': 'up', 'instance': '172.18.0.7:8000', 'job': 'agent'} 1.0

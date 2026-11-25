@@ -1,0 +1,12 @@
+# /metrics snapshot BEFORE diag run
+http_request_duration_seconds_bucket{le="0.3",method="POST",route="/ask"} 1468.0
+http_request_duration_seconds_bucket{le="0.5",method="POST",route="/ask"} 1468.0
+http_request_duration_seconds_bucket{le="1.0",method="POST",route="/ask"} 1468.0
+http_request_duration_seconds_count{method="POST",route="/ask"} 1506.0
+http_request_duration_seconds_sum{method="POST",route="/ask"} 340.9991371391807
+# /metrics snapshot AFTER diag run
+http_request_duration_seconds_bucket{le="0.3",method="POST",route="/ask"} 1758.0
+http_request_duration_seconds_bucket{le="0.5",method="POST",route="/ask"} 1758.0
+http_request_duration_seconds_bucket{le="1.0",method="POST",route="/ask"} 1759.0
+http_request_duration_seconds_count{method="POST",route="/ask"} 1807.0
+http_request_duration_seconds_sum{method="POST",route="/ask"} 414.0369447199628
