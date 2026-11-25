@@ -413,5 +413,5 @@ Chi tiết đáng chú ý từ cùng lần chạy: image **297 MB**; `docker sto
 
 **Phần tôi tự làm / tự kiểm tra thêm** (tự điền, chỉ ghi việc mình thật sự làm):
 
-- Chụp 3 ảnh deploy `screenshots/dashboard.png`, `running.png`, `test.png`: …
+- Chụp 3 ảnh deploy: tự chụp `screenshots/dashboard.png` (project Railway, agent + Redis Online) và `running.png` (deployment ACTIVE, "Deployment successful"); tự chạy 4 lệnh curl và chụp `test.png` (200 / 200 / 401 / 200, không lộ key). AI chỉ cắt bỏ 3 dòng output của một lần chạy lỗi trước đó ở đầu ảnh `test.png` (lần đó key chưa được nạp nên dòng "with key" ra 401).
 - Đọc lại và tự giải thích được code `06-lab-complete/app/` và các số liệu trong `BENCHMARK_REPORT.md`: …
