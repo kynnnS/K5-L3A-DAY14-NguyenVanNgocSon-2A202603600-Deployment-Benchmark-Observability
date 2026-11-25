@@ -25,12 +25,19 @@ Log khởi động trên Railway: uvicorn chạy là PID 1 (`Started server proc
 
 ## Test Commands
 
-Đặt biến trước khi test (key lấy từ Railway Variables, không ghi trong repo):
+Đặt biến trước khi test (key lấy từ Railway Variables, không ghi trong repo). Chọn **một** trong hai cách — cả hai đều không in key ra màn hình:
 
 ```bash
 BASE=https://agent-production-bb3b87e3.up.railway.app
-AGENT_API_KEY=<key đặt trên Railway>
+
+# Cách 1: gõ/dán key, terminal không hiển thị ký tự (-s), rồi export cho curl dùng
+read -rs AGENT_API_KEY && export AGENT_API_KEY && echo "key set (${#AGENT_API_KEY} chars)"
+
+# Cách 2: nạp từ file 06-lab-complete/.env local (đã nằm trong .gitignore, dạng AGENT_API_KEY=...)
+set -a; . 06-lab-complete/.env; set +a
 ```
+
+Xong thì `unset AGENT_API_KEY`. Không dùng `echo $AGENT_API_KEY` hay `cat .env` khi chụp màn hình.
 
 ### Health Check
 ```bash
@@ -58,13 +65,15 @@ curl -sS -o /dev/null -w '%{http_code}\n' -X POST "$BASE/ask" -H 'Content-Type: 
 curl -sS -o /dev/null -w '%{http_code}\n' -X POST "$BASE/ask" -H 'Content-Type: application/json' -H "X-API-Key: $AGENT_API_KEY" -d '{"question":"Hello"}'   # 200
 ```
 
-Output:
+Output (lần đầu sau khi deploy, ~08:02Z ngày 2026-11-25):
 ```text
 200
 200
 401
 200
 ```
+
+Chạy lại lúc 2026-11-25T09:13:30Z (trước khi nộp) cho cùng kết quả: `health 200 | ready 200 | ask-nokey 401 | ask-key 200`. Ảnh [`screenshots/test.png`](screenshots/test.png) là một lần chạy bốn lệnh này trong terminal.
 
 ### Rate limit trên cloud (RATE_LIMIT_PER_MINUTE=10)
 12 request liên tiếp cùng một key:
